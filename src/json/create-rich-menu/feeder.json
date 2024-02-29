@@ -1,60 +1,61 @@
 {
-    "size": {
-      "width": 2500,
-      "height": 1686
-    },
-    "selected": true,
-    "name": "Feeder",
-    "chatBarText": "ป้อนงาน",
-    "areas": [
-      {
-        "bounds": {
-          "x": 532,
-          "y": 586,
-          "width": 640,
-          "height": 709
-        },
-        "action": {
-          "type": "uri",
-          "uri": "https://liff.line.me/2002278391-Oa20yJlN"
-        }
+  "size": {
+    "width": 2500,
+    "height": 1686
+  },
+  "selected": true,
+  "name": "feeder",
+  "chatBarText": "ผู้ป้อนงาน",
+  "areas": [
+    {
+      "bounds": {
+        "x": 536,
+        "y": 607,
+        "width": 640,
+        "height": 709
       },
-      {
-        "bounds": {
-          "x": 1330,
-          "y": 588,
-          "width": 640,
-          "height": 709
-        },
-        "action": {
-          "type": "uri",
-          "uri": "https://liff.line.me/2002278391-gWNBnWO1"
-        }
-      },
-      {
-        "bounds": {
-          "x": 345,
-          "y": 27,
-          "width": 181,
-          "height": 145
-        },
-        "action": {
-          "type": "message",
-          "text": "Carer"
-        }
-      },
-      {
-        "bounds": {
-          "x": 24,
-          "y": 29,
-          "width": 301,
-          "height": 145
-        },
-        "action": {
-          "type": "richmenuswitch",
-          "richMenuAliasId": "richmenu-home",
-          "data": "switch-richmenu-to-home-page"          
-        }
+      "action": {
+        "type": "uri",
+        "uri": "https://liff.line.me/2002278391-Oa20yJlN"
       }
-    ]
-  }
+    },
+    {
+      "bounds": {
+        "x": 1334,
+        "y": 608,
+        "width": 640,
+        "height": 709
+      },
+      "action": {
+        "type": "uri",
+        "uri": "https://liff.line.me/2002278391-gWNBnWO1"
+      }
+    },
+    {
+      "bounds": {
+        "x": 431,
+        "y": 22,
+        "width": 239,
+        "height": 186
+      },
+      "action": {
+        "type": "richmenuswitch",
+        "richMenuAliasId": "richmenu-carer",
+        "data": "switch-richmenu-to-carer-page" 
+      }
+    },
+    {
+      "bounds": {
+        "x": 22,
+        "y": 16,
+        "width": 398,
+        "height": 189
+      },
+      "action": {
+        "type": "richmenuswitch",
+        "richMenuAliasId": "richmenu-home",
+        "data": "switch-richmenu-to-home-page" 
+      }
+    }
+  ]
+}

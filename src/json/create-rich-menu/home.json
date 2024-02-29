@@ -1,85 +1,85 @@
 {
-    "size": {
-      "width": 2500,
-      "height": 1686
-    },
-    "selected": true,
-    "name": "Home",
-    "chatBarText": "Papai Platform",
-    "areas": [
-      {
-        "bounds": {
-          "x": 1745,
-          "y": 672,
-          "width": 690,
-          "height": 182
-        },
-        "action": {
-          "type": "uri",
-          "uri": "https://liff.line.me/2002278391-OqqZy6NK"
-        }
+  "size": {
+    "width": 2500,
+    "height": 1686
+  },
+  "selected": true,
+  "name": "home",
+  "chatBarText": "Papai Platform",
+  "areas": [
+    {
+      "bounds": {
+        "x": 1869,
+        "y": 685,
+        "width": 570,
+        "height": 182
       },
-      {
-        "bounds": {
-          "x": 58,
-          "y": 928,
-          "width": 751,
-          "height": 693
-        },
-        "action": {
-          "type": "uri",
-          "uri": "https://liff.line.me/2002278391-2n70Ozn5"
-        }
-      },
-      {
-        "bounds": {
-          "x": 873,
-          "y": 938,
-          "width": 751,
-          "height": 693
-        },
-        "action": {
-          "type": "uri",
-          "uri": "https://liff.line.me/2002278391-4jGRxaeq"
-        }
-      },
-      {
-        "bounds": {
-          "x": 1691,
-          "y": 928,
-          "width": 751,
-          "height": 693
-        },
-        "action": {
-          "type": "uri",
-          "uri": "https://liff.line.me/2002278391-Oa20yJlN"
-        }
-      },
-      {
-        "bounds": {
-          "x": 335,
-          "y": 17,
-          "width": 218,
-          "height": 145
-        },
-        "action": {
-          "type": "message",
-          "text": "Carer page"
-        }
-      },
-      {
-        "bounds": {
-          "x": 580,
-          "y": 13,
-          "width": 284,
-          "height": 153
-        },
-        "action": {
-          "type": "richmenuswitch",
-          "richMenuAliasId": "richmenu-feeder",
-          "data": "switch-richmenu-to-feeder-page"        
-        }
+      "action": {
+        "type": "uri",
+        "uri": "https://liff.line.me/2002278391-OqqZy6NK"
       }
-    ]
-    
-  }
+    },
+    {
+      "bounds": {
+        "x": 63,
+        "y": 957,
+        "width": 751,
+        "height": 693
+      },
+      "action": {
+        "type": "uri",
+        "uri": "https://liff.line.me/2002278391-2n70Ozn5"
+      }
+    },
+    {
+      "bounds": {
+        "x": 877,
+        "y": 954,
+        "width": 751,
+        "height": 693
+      },
+      "action": {
+        "type": "uri",
+        "uri": "https://liff.line.me/2002278391-4jGRxaeq"
+      }
+    },
+    {
+      "bounds": {
+        "x": 1691,
+        "y": 953,
+        "width": 751,
+        "height": 693
+      },
+      "action": {
+        "type": "uri",
+        "uri": "https://liff.line.me/2002278391-Oa20yJlN"
+      }
+    },
+    {
+      "bounds": {
+        "x": 723,
+        "y": 12,
+        "width": 378,
+        "height": 211
+      },
+      "action": {
+        "type": "richmenuswitch",
+        "richMenuAliasId": "richmenu-feeder",
+        "data": "switch-richmenu-to-feeder-page"        
+      }
+    },
+    {
+      "bounds": {
+        "x": 421,
+        "y": 12,
+        "width": 272,
+        "height": 211
+      },
+      "action": {
+        "type": "richmenuswitch",
+        "richMenuAliasId": "richmenu-carer",
+        "data": "switch-richmenu-to-carer-page" 
+      }
+    }
+  ]
+}

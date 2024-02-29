@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { DocumentIcon, PapaiLogo } from "./Icon";
+import { DocumentIcon, PapaiLogo } from "../Icon";
 
 const CarerPage = () => {
   return (

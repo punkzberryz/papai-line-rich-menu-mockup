@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Kanit } from "next/font/google";
 import "./globals.css";
+import Provider from "@/components/Provider";
+import { Toaster } from "@/components/ui/toaster";
+import Navbar from "@/components/Nav/Navbar";
 
 const kanit = Kanit({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -19,7 +22,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="thai">
-      <body className={kanit.className}>{children}</body>
+      <body className={kanit.className}>
+        <main className="min-h-screen">
+          <Provider>
+            <Navbar />
+            {children}
+            <Toaster />
+          </Provider>
+        </main>
+      </body>
     </html>
   );
 }
