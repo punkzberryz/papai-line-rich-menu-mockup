@@ -1,8 +1,12 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Richmenu Mockup
+
+A richmenu mockup using HTML and CSS to build a beautiful looking LINE Rich Menu. Then it can be exported into a .png file to further used in [LINE Bot Designer](https://developers.line.biz/en/docs/messaging-api/using-bot-designer/) to build a JSON body for the Rich Menu. After we get the Rich Menu image and JSON body then we can upload them via Line Messaging API. We also can delete the unwanted Rich Menu by a just a click.
 
 ## Getting Started
 
-First, run the development server:
+First, copy your LINE Channel Access Token to .env file.
+
+Then we can run the development server:
 
 ```bash
 npm run dev
@@ -14,23 +18,10 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+And modify the RichMenu component as needed.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Then we export the image by clicking the button, Download image, in the home page. We will get the .png image file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+After we downloaded the image, we can create the json body via [LINE Bot Designer](https://developers.line.biz/en/docs/messaging-api/using-bot-designer/). Then we copy the new json body to the json folder in `src/json/create-rich-menu/`, import the json file by editing the code in `src/lib/rich-menu-api.ts` in the function `getRichMenuJsonFromLocal`.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Then we can finally upload the image and json body in the upload page.

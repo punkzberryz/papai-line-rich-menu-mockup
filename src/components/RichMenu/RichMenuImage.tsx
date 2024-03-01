@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { Skeleton } from "../ui/skeleton";
 
 interface RichMenuImageProps {
   richMenuId: string;
@@ -8,7 +9,7 @@ interface RichMenuImageProps {
 }
 const RichMenuImage = ({ channelToken, richMenuId }: RichMenuImageProps) => {
   const [imgUrl, setImgUrl] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     setIsLoading(true);
     fetch(`/api/richmenu/${richMenuId}/image`, {
@@ -35,6 +36,7 @@ const RichMenuImage = ({ channelToken, richMenuId }: RichMenuImageProps) => {
 
   return (
     <div>
+      {isLoading ? <Skeleton className="w-full h-[200px]" /> : null}
       {imgUrl ? (
         <Image
           className="w-[300px] h-auto"

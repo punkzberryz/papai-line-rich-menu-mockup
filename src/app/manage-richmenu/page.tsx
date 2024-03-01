@@ -16,9 +16,6 @@ const ManageRichMenuPage = async () => {
   if (!richMenuList) {
     throw new Error("Rich menu list is not found");
   }
-  // if (richMenuList.length === 0) {
-  //   return <div>No rich menu found</div>;
-  // }
 
   // const richMenus: Record<string, RichMenuReturnType> = {};
   const richMenus: Record<string, RichMenu> = {};

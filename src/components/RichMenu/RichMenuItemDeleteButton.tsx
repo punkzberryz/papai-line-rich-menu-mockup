@@ -24,18 +24,6 @@ const RichMenuItemDeleteButton = ({
         deleteRichMenu({ channelToken, richMenuId }),
         deleteRichMenuAlias({ channelToken, richMenuAliasId }),
       ]);
-      //   const response = await fetch(`/api/richmenu/${richMenuId}`, {
-      //     method: "DELETE",
-      //     headers: {
-      //       Authorization: `Bearer ${channelToken}`,
-      //     },
-      //   });
-      //   if (!response.ok) {
-      //     console.error("Failed to delete rich menu: ", response.statusText);
-      //     console.log(await response.json());
-      //     setIsLoading(false);
-      //     return;
-      //   }
 
       setIsLoading(false);
       toast({
@@ -43,6 +31,7 @@ const RichMenuItemDeleteButton = ({
         description: "Rich menu has been deleted",
       });
       router.refresh();
+      location.reload();
     } catch (err) {
       console.error(err);
       setIsLoading(false);

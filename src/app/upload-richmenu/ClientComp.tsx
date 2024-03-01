@@ -33,7 +33,6 @@ import {
 import { SelectLabel } from "@radix-ui/react-select";
 import { useMutation } from "@tanstack/react-query";
 import { toast } from "@/components/ui/use-toast";
-import { useRouter } from "next/navigation";
 
 const schema = z.object({
   isDefault: z.boolean(),
@@ -50,7 +49,6 @@ interface Props {
 }
 
 const ClientComp = ({ channelToken, jsonBodyMap }: Props) => {
-  const router = useRouter();
   const [image, setImage] = useState<File | null>(null);
   const [imageErrorMessages, setImageErrorMessages] = useState<string | null>(
     null
