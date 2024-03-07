@@ -1,4 +1,3 @@
-import Image from "next/image";
 import GlowingCard from "../GlowingCard";
 import { Card, CardContent } from "../ui/card";
 import { DocumentIcon, NurseIcon, PapaiLogo } from "../Icon";

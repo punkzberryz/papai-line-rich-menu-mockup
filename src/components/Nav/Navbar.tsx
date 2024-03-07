@@ -19,16 +19,22 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="">
-          <Link href="/" className={buttonVariants({ variant: "ghost" })}>
+          <Link
+            data-test="link-download-mockup"
+            href="/"
+            className={buttonVariants({ variant: "ghost" })}
+          >
             Download Mockup
           </Link>
           <Link
+            data-test="link-manage-richmenu"
             href="/manage-richmenu"
             className={buttonVariants({ variant: "ghost" })}
           >
             Manage Richmenu
           </Link>
           <Link
+            data-test="link-upload-richmenu"
             href="/upload-richmenu"
             className={buttonVariants({ variant: "ghost" })}
           >

@@ -11,7 +11,12 @@ const UploadRichMenuPage = async () => {
 
   return (
     <main className="flex flex-col items-center p-2">
-      <h1 className="text-xl font-semibold tracking-wider">Upload Richmenu</h1>
+      <h1
+        data-test="upload-richmenu-title"
+        className="text-xl font-semibold tracking-wider"
+      >
+        Upload Richmenu
+      </h1>
       <ClientComp
         channelToken={channelToken}
         jsonBodyMap={richMenuBodyInputMaps}
