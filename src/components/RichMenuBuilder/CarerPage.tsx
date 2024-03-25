@@ -3,8 +3,8 @@ import { DocumentIcon, PapaiLogo } from "../Icon";
 
 const CarerPage = () => {
   return (
-    <div className="relative h-full bg-[url('/img/rich-menu/group-of-nurses-animated.png')] bg-no-repeat bg-cover bg-center  rounded-lg">
-      <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full rounded-lg overflow-hidden bg-fixed bg-gray-500 opacity-40"></div>
+    <div className="relative h-full bg-[url('/img/rich-menu/nurse-equipment.jpg')] bg-no-repeat bg-cover bg-center  rounded-lg">
+      <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full rounded-lg overflow-hidden bg-fixed bg-gray-500 opacity-25"></div>
       <div className="h-full flex justify-center items-center">
         <CustomGlowingCard>
           <DocumentIcon />

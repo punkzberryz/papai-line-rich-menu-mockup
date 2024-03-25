@@ -1,11 +1,7 @@
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import RichMenuItem from "@/components/RichMenu/RichMenuItem";
 import config from "@/lib/config";
-import {
-  RichMenuReturnType,
-  getRichMenuImage,
-  getRichMenuList,
-} from "@/lib/rich-menu-api";
+import { RichMenuReturnType, getRichMenuList } from "@/lib/rich-menu-api";
 
 const ManageRichMenuPage = async () => {
   const channelToken = config.channelAccessToken;

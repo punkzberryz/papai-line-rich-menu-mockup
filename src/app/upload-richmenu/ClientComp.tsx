@@ -16,7 +16,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import {
-  RichMenuBodyType,
   uploadRichMenuImage,
   createRichMenu,
   createRichMenuAlias,
@@ -33,6 +32,7 @@ import {
 import { SelectLabel } from "@radix-ui/react-select";
 import { useMutation } from "@tanstack/react-query";
 import { toast } from "@/components/ui/use-toast";
+import { RichMenuBodyType } from "../schema/richmenu";
 
 const schema = z.object({
   isDefault: z.boolean(),
@@ -107,7 +107,7 @@ const ClientComp = ({ channelToken, jsonBodyMap }: Props) => {
   };
 
   return (
-    <div>
+    <div data-test="upload-richmenu-parent">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)}>
           <div className="grid grid-cols-1 gap-y-6">
@@ -181,7 +181,12 @@ const ClientComp = ({ channelToken, jsonBodyMap }: Props) => {
                 </FormItem>
               )}
             />
-            <Button disabled={isPending || isSuccess}>Upload</Button>
+            <Button
+              data-test="upload-richmenu-button"
+              disabled={isPending || isSuccess}
+            >
+              Upload
+            </Button>
           </div>
         </form>
       </Form>

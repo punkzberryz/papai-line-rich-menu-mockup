@@ -1,6 +1,6 @@
-import { RichMenuBodyType } from "@/lib/rich-menu-api";
 import { NextRequest, NextResponse } from "next/server";
 import { errorResponse } from "../errorResponse";
+import { RichMenuBodyType } from "@/app/schema/richmenu";
 
 //Create new rich menu
 export async function POST(req: NextRequest) {

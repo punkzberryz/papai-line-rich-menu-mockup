@@ -6,22 +6,22 @@ const RichMenu = () => {
   return (
     <div className="bg-white w-[625px] h-[421px] rounded-xl">
       <Tabs defaultValue="home">
-        <TabsList className="rounded-xl h-auto">
+        <TabsList className="rounded-xl h-auto flex">
           <TabsTrigger
             value="home"
-            className="rounded-xl text-xl data-[state=active]:ring data-[state=active]:ring-primary-papai"
+            className="w-1/3 rounded-xl text-xl data-[state=active]:ring data-[state=active]:ring-primary-papai"
           >
             หน้าหลัก
           </TabsTrigger>
           <TabsTrigger
             value="carer"
-            className="rounded-xl text-xl  data-[state=active]:ring data-[state=active]:ring-primary-papai"
+            className="w-1/3 rounded-xl text-xl  data-[state=active]:ring data-[state=active]:ring-primary-papai"
           >
             ผู้ดูแล
           </TabsTrigger>
           <TabsTrigger
             value="feeder"
-            className="rounded-xl text-xl  data-[state=active]:ring data-[state=active]:ring-primary-papai"
+            className="w-1/3 rounded-xl text-xl  data-[state=active]:ring data-[state=active]:ring-primary-papai"
           >
             ผู้ป้อนงาน
           </TabsTrigger>

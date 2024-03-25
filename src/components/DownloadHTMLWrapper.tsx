@@ -26,7 +26,11 @@ const DownloadHTMLWrapper = ({ children }: { children: ReactNode }) => {
       <div ref={richMenuRef} className="bg-white w-fit p-1">
         {children}
       </div>
-      <Button className="" onClick={handleOnClick}>
+      <Button
+        data-test="download-mockup-image-button"
+        className=""
+        onClick={handleOnClick}
+      >
         Download image
       </Button>
     </div>

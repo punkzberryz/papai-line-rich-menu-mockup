@@ -23,6 +23,7 @@ export default function ImageInput({
     <>
       <div className="w-[500px] border-2 border-dotted border-[#9D97B5] h-auto rounded-xl overflow-hidden  py-3 px-5">
         {children}
+
         <input
           className="sr-only"
           id={inputId}
@@ -43,6 +44,7 @@ export default function ImageInput({
             setImage(file);
           }}
         />
+        {/* <input type="file" /> */}
         <label className="flex flex-col items-start" htmlFor={inputId}>
           {imagePath ? (
             <img src={imagePath} />
