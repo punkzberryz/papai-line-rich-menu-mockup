@@ -16,7 +16,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import {
-  RichMenuBodyType,
   uploadRichMenuImage,
   createRichMenu,
   createRichMenuAlias,
@@ -33,6 +32,7 @@ import {
 import { SelectLabel } from "@radix-ui/react-select";
 import { useMutation } from "@tanstack/react-query";
 import { toast } from "@/components/ui/use-toast";
+import { RichMenuBodyType } from "../schema/richmenu";
 
 const schema = z.object({
   isDefault: z.boolean(),

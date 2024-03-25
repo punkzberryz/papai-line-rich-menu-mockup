@@ -1,7 +1,14 @@
+import { RichMenuBodyType } from "@/app/schema/richmenu";
 import carer from "../json/create-rich-menu/carer.json";
 import feeder from "../json/create-rich-menu/feeder.json";
 import home from "../json/create-rich-menu/home.json";
 import test from "../json/create-rich-menu/test.json";
+import {
+  getCarerBody,
+  getFeederBody,
+  getHomeBody,
+} from "@/json/create-rich-menu";
+import config from "./config";
 
 export const createRichMenu = async ({
   data,
@@ -174,17 +181,39 @@ export const setDefaultRichMenu = async ({
 };
 
 export const getRichMenuJsonFromLocal = () => {
+  const { eventBoard, me, newCarer, newEvent, newFeeder, home } =
+    config.liffUrl;
+  if (!eventBoard || !me || !newCarer || !newEvent || !newFeeder || !home) {
+    console.log("config: ", config);
+    throw new Error("LIFF URL not found in config");
+  }
+  const carerBody = getCarerBody({
+    eventBaordUrl: eventBoard,
+    meUrl: me,
+  });
+
+  const feederBody = getFeederBody({
+    createNewEventUrl: newEvent,
+    meUrl: me,
+  });
+  const homeBody = getHomeBody({
+    createNewCarerUrl: newCarer,
+    createNewFeederUrl: newFeeder,
+    createNewEventUrl: newEvent,
+    papaiPlatformUrl: home,
+  });
+  const testBody = test as RichMenuBodyType;
   return {
-    home,
-    carer,
-    feeder,
-    test,
+    home: homeBody,
+    carer: carerBody,
+    feeder: feederBody,
+    test: testBody,
   };
 };
 
-export type RichMenuBodyType = ReturnType<
-  typeof getRichMenuJsonFromLocal
->[keyof ReturnType<typeof getRichMenuJsonFromLocal>];
+// export type RichMenuBodyType = ReturnType<
+//   typeof getRichMenuJsonFromLocal
+// >[keyof ReturnType<typeof getRichMenuJsonFromLocal>];
 
 export const getRichMenuList = async (channelToken: string) => {
   try {
