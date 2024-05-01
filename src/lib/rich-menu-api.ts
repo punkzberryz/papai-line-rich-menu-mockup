@@ -181,20 +181,42 @@ export const setDefaultRichMenu = async ({
 };
 
 export const getRichMenuJsonFromLocal = () => {
-  const { eventBoard, me, newCarer, newEvent, newFeeder, home } =
-    config.liffUrl;
-  if (!eventBoard || !me || !newCarer || !newEvent || !newFeeder || !home) {
+  const {
+    eventBoard,
+    me,
+    newCarer,
+    newEvent,
+    newFeeder,
+    home,
+    carerMyBookedEvents,
+    carerMyEvents,
+    feederMyEvents,
+  } = config.liffUrl;
+  if (
+    !eventBoard ||
+    !me ||
+    !newCarer ||
+    !newEvent ||
+    !newFeeder ||
+    !home ||
+    !carerMyBookedEvents ||
+    !carerMyEvents ||
+    !feederMyEvents
+  ) {
     console.log("config: ", config);
     throw new Error("LIFF URL not found in config");
   }
   const carerBody = getCarerBody({
     eventBaordUrl: eventBoard,
     meUrl: me,
+    myEventsUrl: carerMyEvents,
+    myBookedEventsUrl: carerMyBookedEvents,
   });
 
   const feederBody = getFeederBody({
     createNewEventUrl: newEvent,
     meUrl: me,
+    myEventsUrl: feederMyEvents,
   });
   const homeBody = getHomeBody({
     createNewCarerUrl: newCarer,

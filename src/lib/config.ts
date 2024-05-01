@@ -8,7 +8,12 @@ const config = {
     newCarer: process.env.LIFF_URL_NEW_CARER,
     newFeeder: process.env.LIFF_URL_NEW_FEEDER,
     eventBoard: process.env.LIFF_URL_EVENT_BOARD,
+    //CARER
+    carerMyEvents: process.env.LIFF_URL_CARER_MY_EVENTS,
+    carerMyBookedEvents: process.env.LIFF_URL_CARER_MY_BOOKED_EVENTS,
+    // FEEDER
     newEvent: process.env.LIFF_URL_NEW_EVENT,
+    feederMyEvents: process.env.LIFF_URL_FEEDER_MY_CREATED_EVENTS,
   },
 };
 export default config;

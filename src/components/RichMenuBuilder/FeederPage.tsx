@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { DocumentIcon, PapaiLogo } from "../Icon";
+import { ClipboardIcon, DocumentIcon, PapaiLogo } from "../Icon";
 
 const FeederPage = () => {
   return (
@@ -10,6 +10,12 @@ const FeederPage = () => {
           <DocumentIcon />
           <p className="text-gray-600 text-2xl font-semibold tracking-wider">
             ป้อนงาน
+          </p>
+        </CustomGlowingCard>
+        <CustomGlowingCard>
+          <ClipboardIcon />
+          <p className="text-gray-600 text-2xl font-semibold tracking-wider">
+            งานที่ป้อน
           </p>
         </CustomGlowingCard>
         <CustomGlowingCard>

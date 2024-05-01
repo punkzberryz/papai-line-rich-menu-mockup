@@ -14,6 +14,39 @@ export const PapaiLogo = ({ className = "" }: IconProps) => {
     />
   );
 };
+export const CalendarConfirmedIcon = ({ className = "" }: IconProps) => {
+  return (
+    <Image
+      className={cn("h-28 w-auto", className)}
+      src="/img/rich-menu/calendar-confirm.png"
+      alt="calendar icon"
+      width={200}
+      height={200}
+    />
+  );
+};
+export const CalendarBookedIcon = ({ className = "" }: IconProps) => {
+  return (
+    <Image
+      className={cn("h-28 w-auto", className)}
+      src="/img/rich-menu/calendar-book.png"
+      alt="calendar icon"
+      width={200}
+      height={200}
+    />
+  );
+};
+export const ClipboardIcon = ({ className = "" }: IconProps) => {
+  return (
+    <Image
+      className={cn("h-28 w-auto", className)}
+      src="/img/rich-menu/calendar-book.png"
+      alt="clipboard icon"
+      width={200}
+      height={200}
+    />
+  );
+};
 
 export const NurseIcon = ({ className = "" }: IconProps) => {
   return (

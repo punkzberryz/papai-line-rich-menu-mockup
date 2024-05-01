@@ -3,10 +3,14 @@ import { RichMenuBodyType } from "@/app/schema/richmenu";
 interface getCarerBodyProps {
   eventBaordUrl: string;
   meUrl: string;
+  myEventsUrl: string;
+  myBookedEventsUrl: string;
 }
 export const getCarerBody = ({
   eventBaordUrl,
   meUrl,
+  myEventsUrl,
+  myBookedEventsUrl,
 }: getCarerBodyProps): RichMenuBodyType => {
   return {
     size: {
@@ -19,10 +23,10 @@ export const getCarerBody = ({
     areas: [
       {
         bounds: {
-          x: 538,
-          y: 608,
+          x: 18,
+          y: 278,
           width: 640,
-          height: 709,
+          height: 635,
         },
         action: {
           type: "uri",
@@ -31,10 +35,34 @@ export const getCarerBody = ({
       },
       {
         bounds: {
-          x: 1324,
-          y: 598,
-          width: 640,
-          height: 709,
+          x: 837,
+          y: 281,
+          width: 632,
+          height: 635,
+        },
+        action: {
+          type: "uri",
+          uri: myEventsUrl,
+        },
+      },
+      {
+        bounds: {
+          x: 1663,
+          y: 282,
+          width: 632,
+          height: 635,
+        },
+        action: {
+          type: "uri",
+          uri: myBookedEventsUrl,
+        },
+      },
+      {
+        bounds: {
+          x: 15,
+          y: 1001,
+          width: 632,
+          height: 635,
         },
         action: {
           type: "uri",

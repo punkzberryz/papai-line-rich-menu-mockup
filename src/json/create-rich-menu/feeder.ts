@@ -3,10 +3,12 @@ import { RichMenuBodyType } from "@/app/schema/richmenu";
 interface getFeederBodyProps {
   createNewEventUrl: string;
   meUrl: string;
+  myEventsUrl: string;
 }
 export const getFeederBody = ({
   createNewEventUrl,
   meUrl,
+  myEventsUrl,
 }: getFeederBodyProps): RichMenuBodyType => {
   return {
     size: {
@@ -19,8 +21,8 @@ export const getFeederBody = ({
     areas: [
       {
         bounds: {
-          x: 536,
-          y: 607,
+          x: 144,
+          y: 603,
           width: 640,
           height: 709,
         },
@@ -31,8 +33,20 @@ export const getFeederBody = ({
       },
       {
         bounds: {
-          x: 1334,
+          x: 938,
           y: 608,
+          width: 640,
+          height: 709,
+        },
+        action: {
+          type: "uri",
+          uri: myEventsUrl,
+        },
+      },
+      {
+        bounds: {
+          x: 1715,
+          y: 605,
           width: 640,
           height: 709,
         },
