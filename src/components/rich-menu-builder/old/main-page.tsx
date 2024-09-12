@@ -1,6 +1,6 @@
-import GlowingCard from "../GlowingCard";
-import { Card, CardContent } from "../ui/card";
-import { DocumentIcon, NurseIcon, PapaiLogo } from "../Icon";
+import GlowingCard from "../../GlowingCard";
+import { Card, CardContent } from "../../ui/card";
+import { DocumentIcon, NurseIcon, PapaiLogo } from "../../Icon";
 
 const MainPage = () => {
   return (

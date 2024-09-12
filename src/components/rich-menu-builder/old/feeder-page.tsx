@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { ClipboardIcon, DocumentIcon, PapaiLogo } from "../Icon";
+import { ClipboardIcon, DocumentIcon, PapaiLogo } from "../../Icon";
 
 const FeederPage = () => {
   return (

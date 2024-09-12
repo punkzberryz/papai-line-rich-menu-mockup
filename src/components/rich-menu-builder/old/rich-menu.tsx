@@ -1,7 +1,7 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import MainPage from "./MainPage";
-import CarerPage from "./CarerPage";
-import FeederPage from "./FeederPage";
+import MainPage from "./main-page";
+import CarerPage from "./carer-page";
+import FeederPage from "./feeder-page";
 const RichMenu = () => {
   return (
     <div className="bg-white w-[625px] h-[421px] rounded-xl">

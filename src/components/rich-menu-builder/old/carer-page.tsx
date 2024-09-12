@@ -4,7 +4,7 @@ import {
   CalendarConfirmedIcon,
   DocumentIcon,
   PapaiLogo,
-} from "../Icon";
+} from "../../Icon";
 
 const CarerPage = () => {
   return (
