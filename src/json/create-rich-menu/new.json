@@ -1,0 +1,59 @@
+{
+    "size": {
+      "width": 2500,
+      "height": 1686
+    },
+    "selected": true,
+    "name": "Main Page (New)",
+    "chatBarText": "ค้นหาผู้ดูแล",
+    "areas": [
+      {
+        "bounds": {
+          "x": 1931,
+          "y": 45,
+          "width": 519,
+          "height": 149
+        },
+        "action": {
+          "type": "message",
+          "text": "Home action"
+        }
+      },
+      {
+        "bounds": {
+          "x": 62,
+          "y": 611,
+          "width": 742,
+          "height": 1027
+        },
+        "action": {
+          "type": "message",
+          "text": "New Event Action"
+        }
+      },
+      {
+        "bounds": {
+          "x": 877,
+          "y": 609,
+          "width": 742,
+          "height": 1027
+        },
+        "action": {
+          "type": "message",
+          "text": "My Event Action"
+        }
+      },
+      {
+        "bounds": {
+          "x": 1692,
+          "y": 615,
+          "width": 742,
+          "height": 1027
+        },
+        "action": {
+          "type": "message",
+          "text": "Chat With Papai"
+        }
+      }
+    ]
+  }
