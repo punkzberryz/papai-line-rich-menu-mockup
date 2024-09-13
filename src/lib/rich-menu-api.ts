@@ -198,7 +198,7 @@ export const getRichMenuJsonFromLocal = () => {
     newFeeder,
     carerMyBookedEvents,
     carerMyEvents,
-    feederMyEvents,
+    feederMyEvents,authSignup
   } = config.liffUrl;
   if (
     !eventBoard ||
@@ -218,6 +218,7 @@ export const getRichMenuJsonFromLocal = () => {
     papaiPlatformUrl: home,
     appEventNewUrl: appEventNew,
     appEventUrl: appEvent,
+    authSignupUrl:authSignup
   });
   //old
   const carerBody = getCarerBody({

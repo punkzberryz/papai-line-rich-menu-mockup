@@ -1,13 +1,14 @@
 import { RichMenuBodyType } from "@/app/schema/richmenu";
 interface getMainBodyProps {
   papaiPlatformUrl: string;
+  authSignupUrl: string;
   appEventNewUrl: string;
   appEventUrl: string;
 }
 export const getMainBody = ({
   papaiPlatformUrl,
   appEventNewUrl,
-  appEventUrl,
+  appEventUrl,authSignupUrl
 }: getMainBodyProps): RichMenuBodyType => {
   return {
     size: {
@@ -62,8 +63,8 @@ export const getMainBody = ({
           height: 1027,
         },
         action: {
-          type: "message",
-          text: "สอบถามรายละเอียด",
+          type: "uri",
+          uri: authSignupUrl,
         },
       },
     ],

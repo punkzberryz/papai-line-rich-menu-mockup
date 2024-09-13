@@ -3,6 +3,7 @@ const config = {
   baseUrl: process.env.BASE_URL,
   liffUrl: {
     home: `https://liff.line.me/${process.env.LIFF_URL_HOME}`,
+    authSignup: `https://liff.line.me/${process.env.LIFF_ID_AUTH_SIGNUP}`,
     appEvent: `https://liff.line.me/${process.env.LIFF_ID_APP_EVENT}`,
     appEventNew: `https://liff.line.me/${process.env.LIFF_ID_APP_EVENT_NEW}`,
     //old,

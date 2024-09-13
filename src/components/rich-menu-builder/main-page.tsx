@@ -52,8 +52,8 @@ export const Mainpage = () => {
                 <PapaiLogo className="-scale-x-[1]" />
               </div>
               <p className="text-center text-2xl font-semibold tracking-wider text-gray-600">
-                คุยกับ
-                <span className="text-3xl text-primary">พาไป</span>
+                สมัครใหม่
+                {/* <span className="text-3xl text-primary">พาไป</span> */}
               </p>
             </div>
           </GlowingCard>
