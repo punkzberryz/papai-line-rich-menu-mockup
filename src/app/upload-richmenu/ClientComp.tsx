@@ -85,7 +85,23 @@ const ClientComp = ({ channelToken, jsonBodyMap }: Props) => {
     mutationKey: ["uploadRichMenu"],
     mutationFn: uploadRichMenu,
     retry: false,
-    onError: () => {
+    onError: (err) => {
+      if (err.message === "The image size is not allowed for richmenu") {
+        toast({
+          title: "Error",
+          description: (
+            <div>
+              <p>The image size is not allowed for richmenu</p>
+              <p>Width must be 800 to 2500 px</p>
+              <p>Height must be 250 to 1686 px</p>
+              <p>Image aspect ratio (width / height): 1.45 or more</p>
+              <p>Image format: JPEG or PNG</p>
+            </div>
+          ),
+          className: "text-red-500 font-semibold",
+        });
+        return;
+      }
       toast({
         title: "Error",
         description: "Failed to upload rich menu",

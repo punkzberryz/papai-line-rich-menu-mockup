@@ -63,8 +63,11 @@ export const uploadRichMenuImage = async ({
       body: image,
     });
     if (!response.ok) {
-      const data = await response.json();
-      console.log({ data });
+      if (
+        response.statusText === "The image size is not allowed for richmenu"
+      ) {
+        throw new Error("The image size is not allowed for richmenu");
+      }
       throw new Error(
         "Failed to upload rich menu image: " + response.statusText,
       );
@@ -198,7 +201,8 @@ export const getRichMenuJsonFromLocal = () => {
     newFeeder,
     carerMyBookedEvents,
     carerMyEvents,
-    feederMyEvents,authSignup
+    feederMyEvents,
+    authSignup,
   } = config.liffUrl;
   if (
     !eventBoard ||
@@ -218,7 +222,7 @@ export const getRichMenuJsonFromLocal = () => {
     papaiPlatformUrl: home,
     appEventNewUrl: appEventNew,
     appEventUrl: appEvent,
-    authSignupUrl:authSignup
+    authSignupUrl: authSignup,
   });
   //old
   const carerBody = getCarerBody({

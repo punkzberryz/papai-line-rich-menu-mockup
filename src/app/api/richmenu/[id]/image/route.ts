@@ -69,7 +69,13 @@ export async function POST(
     );
     if (!response.ok) {
       const data = await response.json();
-      console.log({ error: data });
+
+      if (data.message === "The image size is not allowed for richmenu") {
+        return errorResponse({
+          message: "The image size is not allowed for richmenu",
+          statusCode: 400,
+        });
+      }
 
       return errorResponse({
         message: "Failed to upload richmenu image",
