@@ -51,7 +51,7 @@ interface Props {
 const ClientComp = ({ channelToken, jsonBodyMap }: Props) => {
   const [image, setImage] = useState<File | null>(null);
   const [imageErrorMessages, setImageErrorMessages] = useState<string | null>(
-    null
+    null,
   );
   const form = useForm<Schema>({
     resolver: zodResolver(schema),
@@ -119,7 +119,7 @@ const ClientComp = ({ channelToken, jsonBodyMap }: Props) => {
               }}
               disabled={false}
             >
-              <p className="pb-5 flex gap-x-1 items-center">
+              <p className="flex items-center gap-x-1 pb-5">
                 <label htmlFor="image">Rich Menu Image</label>
               </p>
             </ImageInput>
@@ -127,7 +127,7 @@ const ClientComp = ({ channelToken, jsonBodyMap }: Props) => {
               <p className="text-red-500">{imageErrorMessages}</p>
             ) : null}
             {image ? (
-              <div className="text-sm text-gray-600 mx-auto">
+              <div className="mx-auto text-sm text-gray-600">
                 <p>Image size: {(image.size / 1024 / 1024).toFixed(1)} MB</p>
                 <p>Image name: {image.name}</p>
               </div>
@@ -171,7 +171,7 @@ const ClientComp = ({ channelToken, jsonBodyMap }: Props) => {
                   </Select>
                   <FormMessage />
                   {form.getValues("jsonBodyKey") ? (
-                    <div className="border rounded-lg p-4">
+                    <div className="rounded-lg border p-4">
                       <p className="text-gray-600">Preview JSON Body</p>
                       <RichMenuBodyPreview
                         jsonBody={jsonBodyMap[form.getValues("jsonBodyKey")]}
@@ -192,7 +192,7 @@ const ClientComp = ({ channelToken, jsonBodyMap }: Props) => {
       </Form>
       {isSuccess && (
         <div className="mt-4">
-          <p className="text-green-500 font-semibold">
+          <p className="font-semibold text-green-500">
             Rich menu uploaded successfully
           </p>
           <Button className="w-full" onClick={handleRefreshPage}>
@@ -201,7 +201,7 @@ const ClientComp = ({ channelToken, jsonBodyMap }: Props) => {
         </div>
       )}
       {isError && (
-        <p className="text-red-500 font-semibold">Failed to upload rich menu</p>
+        <p className="font-semibold text-red-500">Failed to upload rich menu</p>
       )}
     </div>
   );
@@ -216,7 +216,7 @@ const RichMenuBodyPreview = ({
 }) => {
   if (!jsonBody) return <div></div>;
   return (
-    <div className="text-sm overflow-y-scroll h-40">
+    <div className="h-40 overflow-y-scroll text-sm">
       <pre>{JSON.stringify(jsonBody, null, 2)}</pre>
     </div>
   );
@@ -239,8 +239,11 @@ const uploadRichMenu = async ({
     //Create rich menu
     const richMenuId = await createRichMenu({ channelToken, data });
     if (!richMenuId) throw new Error("Failed to create rich menu");
-    console.log("richMenuId", richMenuId);
-    await uploadRichMenuImage({ channelToken, image, richMenuId });
+    // console.log("richMenuId", richMenuId);
+    // const imageFile = new File([image], `${fileName}.jpg`, {
+    //   type: "image/jpeg",
+    // });
+    await uploadRichMenuImage({ channelToken, image: image, richMenuId });
     await createRichMenuAlias({ channelToken, fileName, richMenuId });
     // //Set default rich menu
     if (isDefault) {

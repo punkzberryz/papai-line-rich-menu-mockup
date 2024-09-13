@@ -4,7 +4,7 @@ import { NextRequest, NextResponse } from "next/server";
 // We create this route to avoid CORS when fetching richmenu image on the client side
 export async function GET(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: { id: string } },
 ) {
   const richMenuId = params.id;
   const channelToken = req.headers.get("Authorization")?.replace("Bearer ", "");
@@ -43,7 +43,7 @@ export async function GET(
 //Upload richmenu image
 export async function POST(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: { id: string } },
 ) {
   const richMenuId = params.id;
   const channelToken = req.headers.get("Authorization")?.replace("Bearer ", "");
@@ -65,9 +65,12 @@ export async function POST(
           Authorization: `Bearer ${channelToken}`,
         },
         body: file,
-      }
+      },
     );
     if (!response.ok) {
+      const data = await response.json();
+      console.log({ error: data });
+
       return errorResponse({
         message: "Failed to upload richmenu image",
         statusCode: 400,

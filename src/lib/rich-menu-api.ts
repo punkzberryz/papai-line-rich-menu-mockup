@@ -9,6 +9,7 @@ import {
   getHomeBody,
 } from "@/json/create-rich-menu";
 import config from "./config";
+import { getMainBody } from "@/json/create-rich-menu/main";
 
 export const createRichMenu = async ({
   data,
@@ -27,6 +28,8 @@ export const createRichMenu = async ({
       },
     });
     if (!resp.ok) {
+      const data = await resp.json();
+      console.log({ data });
       throw new Error("Failed to create rich menu: " + resp.statusText);
     }
     const { richMenuId }: { richMenuId?: string } = await resp.json();
@@ -60,8 +63,10 @@ export const uploadRichMenuImage = async ({
       body: image,
     });
     if (!response.ok) {
+      const data = await response.json();
+      console.log({ data });
       throw new Error(
-        "Failed to upload rich menu image: " + response.statusText
+        "Failed to upload rich menu image: " + response.statusText,
       );
     }
   } catch (err) {
@@ -94,7 +99,7 @@ export const createRichMenuAlias = async ({
     });
     if (!response.ok) {
       throw new Error(
-        "Failed to create rich menu alias: " + response.statusText
+        "Failed to create rich menu alias: " + response.statusText,
       );
     }
   } catch (err) {
@@ -144,7 +149,7 @@ export const deleteRichMenuAlias = async ({
     });
     if (!response.ok) {
       throw new Error(
-        "Failed to delete rich menu alias: " + response.statusText
+        "Failed to delete rich menu alias: " + response.statusText,
       );
     }
   } catch (err) {
@@ -170,7 +175,7 @@ export const setDefaultRichMenu = async ({
     });
     if (!response.ok) {
       throw new Error(
-        "Failed to set rich menu default: " + response.statusText
+        "Failed to set rich menu default: " + response.statusText,
       );
     }
   } catch (err) {
@@ -182,12 +187,15 @@ export const setDefaultRichMenu = async ({
 
 export const getRichMenuJsonFromLocal = () => {
   const {
+    appEvent,
+    appEventNew,
+    home,
+    //old
     eventBoard,
     me,
     newCarer,
     newEvent,
     newFeeder,
-    home,
     carerMyBookedEvents,
     carerMyEvents,
     feederMyEvents,
@@ -206,6 +214,12 @@ export const getRichMenuJsonFromLocal = () => {
     console.log("config: ", config);
     throw new Error("LIFF URL not found in config");
   }
+  const mainBody = getMainBody({
+    papaiPlatformUrl: home,
+    appEventNewUrl: appEventNew,
+    appEventUrl: appEvent,
+  });
+  //old
   const carerBody = getCarerBody({
     eventBaordUrl: eventBoard,
     meUrl: me,
@@ -226,6 +240,8 @@ export const getRichMenuJsonFromLocal = () => {
   });
   const testBody = test as RichMenuBodyType;
   return {
+    main: mainBody,
+    //old
     home: homeBody,
     carer: carerBody,
     feeder: feederBody,
@@ -284,7 +300,7 @@ export const getRichMenuImage = async ({
         headers: {
           Authorization: `Bearer ${channelToken}`,
         },
-      }
+      },
     );
 
     if (!response.ok) {
